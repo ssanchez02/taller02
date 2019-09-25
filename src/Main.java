@@ -68,8 +68,8 @@ public class Main {
     /**
      * Método que busca los sismos ≥ 4.0
      */
-    public void mayores4(double[][] matriz) {
-        // ArrayList<double> asdasd = new ArrayList<double>();
+    public static void mayores4(double[][] matriz) {
+
         int mayoresA4 = 0;
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
@@ -77,9 +77,9 @@ public class Main {
                     mayoresA4++;
                 }
             }
-
+            System.out.println("Dia " + (i + 1) + ": " + mayoresA4 + " veces");
+            mayoresA4 = 0;
         }
-
     }
 
     /**
@@ -92,6 +92,7 @@ public class Main {
         try {
             numero = leerTeclado();
             if (numero < 1 || numero > 31) {
+                System.out.println("Ingresar nuevamente");
                 pedirDias();
             }
         } catch (InputMismatchException e) {
@@ -137,7 +138,7 @@ public class Main {
                     sismoMax(matrizLlenada);
                     break;
                 case 2:
-
+                    mayores4(matrizLlenada);
                     break;
                 case 3:
                     bandera = false;
